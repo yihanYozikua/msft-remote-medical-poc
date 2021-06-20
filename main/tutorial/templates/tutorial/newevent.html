@@ -31,10 +31,12 @@
     </div>
   </div>
   <div class="form-group mb-3">
-    <label>Body</label>
-    <textarea class="form-control" name="ev-body" rows="3"></textarea>
+    <!-- <label>Body</label> -->
+    <label>身分證字號</label>
+    <!-- <textarea class="form-control" name="ev-body" rows="3"></textarea> -->
+    <input class="form-control" name="ev-body" type="text" placeholder="請輸入身分證字號，如：B123456789">
   </div>
-  <input class="btn btn-primary mr-2" type="submit" value="Create" />
+  <input class="btn btn-primary mr-2" type="submit" value="Create"/>
   <a class="btn btn-secondary" href="/calendar">Cancel</a>
 </form>
 {% endblock %}
