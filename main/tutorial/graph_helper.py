@@ -196,7 +196,7 @@ def get_iana_from_windows(windows_tz_name):
     return windows_tz_name
 
 
-def create_event(token, subject, start, end, attendees=None, body=None, timezone='UTC'):
+def create_event(token, subject, start, end, link, attendees=None, body=None, timezone='UTC'):
   # Create an event object
   # https://docs.microsoft.com/graph/api/resources/event?view=graph-rest-1.0
   new_event = {
@@ -223,13 +223,13 @@ def create_event(token, subject, start, end, attendees=None, body=None, timezone
 
     new_event['attendees'] = attendee_list
 
-  if body:
-    # Create an itemBody object
-    # https://docs.microsoft.com/graph/api/resources/itembody?view=graph-rest-1.0
-    new_event['body'] = {
-      'contentType': 'text',
-      'content': body
-    }
+  #if body:
+  # Create an itemBody object
+  # https://docs.microsoft.com/graph/api/resources/itembody?view=graph-rest-1.0
+  new_event['body'] = {
+    'contentType': 'text',
+    'content': link
+  }
 
   # Set headers
   headers = {
@@ -240,3 +240,29 @@ def create_event(token, subject, start, end, attendees=None, body=None, timezone
   requests.post('{0}/me/events'.format(graph_url),
     headers=headers,
     data=json.dumps(new_event))
+
+
+def create_meeting(token, start, end, timezone='UTC'):
+  new_event = {
+    'startDateTime': start,
+    'endDateTime': end,
+    'subject': 'User Token Meeting'
+  }
+
+  # Set headers
+  headers = {
+    'Authorization': 'Bearer {0}'.format(token),
+    'Content-Type': 'application/json'
+  }
+
+  response = requests.post('{0}/me/onlineMeetings'.format(graph_url),
+    headers=headers,
+    data=json.dumps(new_event))
+  
+  ret = "no link recieved"
+  print("================================")
+  print(response.content)
+  # currently the reponse is always 403 Forbidden
+  # ret = response['joinWebUrl']
+  print("================================")
+  return ret
