@@ -246,7 +246,16 @@ def create_meeting(token, start, end, timezone='UTC'):
   new_event = {
     'startDateTime': start,
     'endDateTime': end,
-    'subject': 'User Token Meeting'
+    'subject': 'User Token Meeting',
+    "participants": {
+      "organizer": {
+        "identity": {
+          "user": {
+            "id": "cc4f9519-e18d-47a5-966f-f45eea0fd147"
+          }
+        }
+      }
+    }
   }
 
   # Set headers
