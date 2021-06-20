@@ -101,6 +101,7 @@ def calendar(request):
   return render(request, 'tutorial/calendar.html', context)
 
 
+
 def newevent(request):
   context = initialize_context(request)
   user = context['user']
@@ -119,23 +120,28 @@ def newevent(request):
     attendees = None
     if request.POST['ev-attendees']:
       attendees = request.POST['ev-attendees'].split(';')
+
     body = request.POST['ev-body']
 
     # Create the event
     token = get_token(request)
+
+    link = create_meeting(token, request.POST['ev-start'], request.POST['ev-end'])
+
 
     create_event(
       token,
       request.POST['ev-subject'],
       request.POST['ev-start'],
       request.POST['ev-end'],
+      link,
       attendees,
       request.POST['ev-body'],
-      user['timeZone'])
+      user['timeZone']
+    )
 
     # Redirect back to calendar view
     return HttpResponseRedirect(reverse('calendar'))
   else:
     # Render the form
     return render(request, 'tutorial/newevent.html', context)
-  print('hello')
