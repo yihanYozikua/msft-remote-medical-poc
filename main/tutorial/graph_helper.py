@@ -244,14 +244,9 @@ def create_event(token, subject, start, end, link, attendees=None, body=None, ti
 
 def create_meeting(token, start, end, timezone='UTC'):
   new_event = {
-    'start': {
-      'dateTime': start,
-      'timeZone': timezone
-    },
-    'end': {
-      'dateTime': end,
-      'timeZone': timezone
-    }
+    'startDateTime': start,
+    'endDateTime': end,
+    'subject': 'User Token Meeting'
   }
 
   # Set headers
