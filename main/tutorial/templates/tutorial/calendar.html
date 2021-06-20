@@ -1,14 +1,21 @@
 {% extends "tutorial/layout.html" %}
 {% block content %}
 <h1>Calendar</h1>
-<a href="/calendar/new" class="btn btn-light btn-sm mb-3">New event</a>
+<!-- <a href="/calendar/new" class="btn btn-light btn-sm mb-3">New event</a> -->
+<a href="/calendar/new" class="btn btn-light btn-sm mb-3">預約看診</a>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Organizer</th>
-      <th scope="col">Subject</th>
-      <th scope="col">Start</th>
-      <th scope="col">End</th>
+      <!-- <th scope="col">Organizer</th> -->
+      <th scope="col">預約人</th>
+      <!-- <th scope="col">Subject</th> -->
+      <th scope="col">診別</th>
+      <!-- <th scope="col">Start</th> -->
+      <th scope="col">開始時間</th>
+      <!-- <th scope="col">End</th> -->
+      <th scope="col">結束時間</th>
+      <!-- <th scope="col">Link</th> -->
+      <th scope="col">看診連結</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +26,7 @@
           <td>{{ event.subject }}</td>
           <td>{{ event.start.dateTime|date:'n/d/Y g:i A' }}</td>
           <td>{{ event.end.dateTime|date:'n/d/Y g:i A' }}</td>
+          <td>{{"https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-beta"}}</td>
         </tr>
       {% endfor %}
     {% endif %}

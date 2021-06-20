@@ -1,0 +1,83 @@
+{
+  "data_category":"clinic",
+  "content":[
+    {
+      "department":"surgery",
+      "division":"orthopedics",
+      "doctor_list":[
+        {
+          "name":"YH Hsiao",
+          "ID":"D18270",
+          "available":[
+            {
+              "date":"2021 JUN 29",
+              "time_start":"08:30",
+              "time_end":"12:00",
+              "remain_quata":"7"
+            },
+            {
+              "date":"2021 JUL 1",
+              "time_start":"13:30",
+              "time_end":"17:00",
+              "remain_quata":"10"
+            },
+            {
+              "date":"2021 JUL 1",
+              "time_start":"18:30",
+              "time_end":"21:00",
+              "remain_quata":"20"
+            }
+          ]
+        },
+        {
+          "name":"TE Tai",
+          "ID":"D27618",
+          "available":[
+            {
+              "date":"2021 JUN 29",
+              "time_start":"13:30",
+              "time_end":"17:00",
+              "remain_quata":"3"
+            },
+            {
+              "date":"2021 JUL 1",
+              "time_start":"13:30",
+              "time_end":"17:00",
+              "remain_quata":"10"
+            },
+            {
+              "date":"2021 JUL 1",
+              "time_start":"18:30",
+              "time_end":"21:00",
+              "remain_quata":"20"
+            }
+          ]
+        },
+        {
+          "name":"JW Yeh",
+          "ID":"D12345",
+          "available":[
+            {
+              "date":"2021 JUN 28",
+              "time_start":"08:30",
+              "time_end":"12:00",
+              "remain_quata":"7"
+            },
+            {
+              "date":"2021 JUN 1",
+              "time_start":"13:30",
+              "time_end":"17:00",
+              "remain_quata":"10"
+            },
+            {
+              "date":"2021 JUN 1",
+              "time_start":"18:30",
+              "time_end":"21:00",
+              "remain_quata":"20"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
