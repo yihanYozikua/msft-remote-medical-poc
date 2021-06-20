@@ -1,27 +1,31 @@
 {% extends "tutorial/layout.html" %}
 {% block content %}
-<h1>New event</h1>
+<h1>預約看診</h1>
 <form method="POST">
   {% csrf_token %}
   <div class="form-group">
-    <label>Subject</label>
+    <!-- <label>Subject</label> -->
+    <label>診別 / 科別</label>
     <input class="form-control" name="ev-subject" type="text">
   </div>
   <div class="form-group">
-    <label>Attendees</label>
+    <!-- <label>Attendees</label> -->
+    <label>醫師</label>
     <input class="form-control" name="ev-attendees" type="text"
       placeholder="Separate multiple email addresses with a semicolon (';')">
   </div>
   <div class="form-row">
     <div class="col">
       <div class="form-group">
-        <label>Start</label>
+        <!-- <label>Start</label> -->
+        <label>開始時間</label>
         <input class="form-control" name="ev-start" type="datetime-local">
       </div>
     </div>
     <div class="col">
       <div class="form-group">
-        <label>End</label>
+        <!-- <label>End</label> -->
+        <label>結束時間</label>
         <input class="form-control" name="ev-end" type="datetime-local">
       </div>
     </div>

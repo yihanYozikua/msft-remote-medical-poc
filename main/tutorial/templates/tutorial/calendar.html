@@ -26,7 +26,9 @@
           <td>{{ event.subject }}</td>
           <td>{{ event.start.dateTime|date:'n/d/Y g:i A' }}</td>
           <td>{{ event.end.dateTime|date:'n/d/Y g:i A' }}</td>
-          <td>{{"https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-beta"}}</td>
+          <td>
+            <a href="https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-beta" target="_blank" class="btn btn-light btn-sm mb-3">點我前往看診</a>
+          </td>
         </tr>
       {% endfor %}
     {% endif %}
