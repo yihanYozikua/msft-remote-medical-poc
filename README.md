@@ -1,5 +1,5 @@
 # MSFT Remote Medical POC
-#### Author: Yvonne Hsiao, Vivian Chan
+#### Author: [Yvonne Hsiao](https://github.com/yihanYozikua), [Vivian Chan](https://github.com/VivianChan1998)
 
 The POC for remote medical clinic.
 This code demonstrates a system where once the email, start date and end date is entered, the system sents an email with a teams link to the entered email address.
@@ -29,12 +29,55 @@ Note that the `app_id` and `app_secret` needs to be filled out.
 To get the two ids, you will first need a [Azure Portal](https://portal.azure.com/).
 
 In the Azure portal, please follow these steps:
-1. 
+1. Select `Azure Active Directory` in the side bar.
+
+![](https://i.imgur.com/W9SXCXl.png)
+
+2. Select `App registration` in the side bar.
+
+![](https://i.imgur.com/yMW7WdE.png)
+
+3. Click `New registration`
+
+![](https://i.imgur.com/tJmP8tJ.png)
+
+4. Fill out the form as shown in image and press `Register`
+
+![](https://i.imgur.com/XRsyRzj.png)
+
+5. It will return to the newly created registration. The `[app_id]` is the value in the red box.
+> NOTE that the square bracket is NOT needed in the file.
+
+![](https://i.imgur.com/O3KZ8D4.png)
+
+6. Select `Certificate & secrets` from the side bar and add a `New Client Secret`.
+
+![](https://i.imgur.com/ZnnClmj.png)
+
+7. After filling out the description and clicking `Add`, 
+The `[app_secret]` will be in the red box as shown.
+
+![](https://i.imgur.com/hQcbvu3.png)
+
+
+After completing the `oauth_settings.yml` file, install the libraries in need.
+```
+pip install --user Django==3.1.4
+pip install msal==1.7.0
+pip install requests==2.25.0
+pip install pyyaml==5.3.1
+pip install python-dateutil==2.8.1
+```
+
+Open the terminal and run this script under the `msft-remote-medical-poc` file.
+```
+python3 main/manage.py runserver
+```
 
 
 ## Code structure
 
-Aside from the [tutorial](https://docs.microsoft.com/en-us/graphtutorials/python), we modified `main/tutorial/graph_helper` and `main/tutorial/views.py` to create our own function `create_meeting`.
+Aside from the [tutorial](https://docs.microsoft.com/en-us/graph/tutorials/python), we modified `main/tutorial/graph_helper` and `main/tutorial/views.py` to create our own function `create_meeting`.
 
 The resulted link in `create_meeting` gets send back to line 129 in `views.py`.
 The link is later on passed to `create_event` to become the content of the email.
@@ -50,10 +93,12 @@ The error message is as below.
 
 > NOTE: After solving this error, please modify line 262 in `graph_helper.py` into the responsed link. It is set to no link recieved now because the API isn't working.g
 
+[Issue in detailed.](https://github.com/yihanYozikua/msft-remote-medical-poc/issues)
+
 
 ## Related Links
 
-[Build Python Django apps with Microsoft Graph](https://docs.microsoft.com/en-us/graphtutorials/python)
+[Build Python Django apps with Microsoft Graph](https://docs.microsoft.com/en-us/graph/tutorials/python)
 
 [Create onlineMeeting](https://docs.microsoft.com/en-us/graph/api/application-post-onlinemeetings?view=graph-rest-beta&tabs=javascript)
 
