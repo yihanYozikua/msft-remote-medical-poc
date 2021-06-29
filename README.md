@@ -1,5 +1,5 @@
 # MSFT Remote Medical POC
-#### Author: Yvonne Hsiao, Vivian Chan
+#### Author: [Yvonne Hsiao](https://github.com/yihanYozikua), [Vivian Chan](https://github.com/VivianChan1998)
 
 The POC for remote medical clinic.
 This code demonstrates a system where once the email, start date and end date is entered, the system sents an email with a teams link to the entered email address.
