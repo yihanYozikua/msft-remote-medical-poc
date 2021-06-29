@@ -34,10 +34,26 @@ In the Azure portal, please follow these steps:
 
 ## Code structure
 
+Aside from the [tutorial](https://docs.microsoft.com/en-us/graphtutorials/python), we modified `main/tutorial/graph_helper` and `main/tutorial/views.py` to create our own function `create_meeting`.
+
+The resulted link in `create_meeting` gets send back to line 129 in `views.py`.
+The link is later on passed to `create_event` to become the content of the email.
+
 
 ## Current issue
 
+The API that is supposed to return the meeting link currently returns a 400 error.
+The error message is as below.
+```
+{"error":{"code":"General","message":"Request payload cannot be null.","innerError":{"request-id":"034a7e3d-5b9d-4555-927d-3a44b7d5052c","date":"2021-06-29T17:10:43","client-request-id":"034a7e3d-5b9d-4555-927d-3a44d7d3052c"}}}
+```
+
+> NOTE: After solving this error, please modify line 262 in `graph_helper.py` into the responsed link. It is set to no link recieved now because the API isn't working.g
 
 
 ## Related Links
+
+[Build Python Django apps with Microsoft Graph](https://docs.microsoft.com/en-us/graphtutorials/python)
+
+[Create onlineMeeting](https://docs.microsoft.com/en-us/graph/api/application-post-onlinemeetings?view=graph-rest-beta&tabs=javascript)
 
