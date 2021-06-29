@@ -59,7 +59,17 @@ The `[app_secret]` will be in the red box as shown.
 
 ![](https://i.imgur.com/hQcbvu3.png)
 
-After completing the `oauth_settings.yml` file, open the terminal and run this script under the `msft-remote-medical-poc` file.
+
+After completing the `oauth_settings.yml` file, install the libraries in need.
+```
+pip install --user Django==3.1.4
+pip install msal==1.7.0
+pip install requests==2.25.0
+pip install pyyaml==5.3.1
+pip install python-dateutil==2.8.1
+```
+
+Open the terminal and run this script under the `msft-remote-medical-poc` file.
 ```
 python3 main/manage.py runserver
 ```
@@ -88,7 +98,7 @@ The error message is as below.
 
 ## Related Links
 
-[Build Python Django apps with Microsoft Graph](https://docs.microsoft.com/en-us/graphtutorials/python)
+[Build Python Django apps with Microsoft Graph](https://docs.microsoft.com/en-us/graph/tutorials/python)
 
 [Create onlineMeeting](https://docs.microsoft.com/en-us/graph/api/application-post-onlinemeetings?view=graph-rest-beta&tabs=javascript)
 
