@@ -29,7 +29,40 @@ Note that the `app_id` and `app_secret` needs to be filled out.
 To get the two ids, you will first need a [Azure Portal](https://portal.azure.com/).
 
 In the Azure portal, please follow these steps:
-1. 
+1. Select `Azure Active Directory` in the side bar.
+
+![](https://i.imgur.com/W9SXCXl.png)
+
+2. Select `App registration` in the side bar.
+
+![](https://i.imgur.com/yMW7WdE.png)
+
+3. Click `New registration`
+
+![](https://i.imgur.com/tJmP8tJ.png)
+
+4. Fill out the form as shown in image and press `Register`
+
+![](https://i.imgur.com/XRsyRzj.png)
+
+5. It will return to the newly created registration. The `[app_id]` is the value in the red box.
+> NOTE that the square bracket is NOT needed in the file.
+
+![](https://i.imgur.com/O3KZ8D4.png)
+
+6. Select `Certificate & secrets` from the side bar and add a `New Client Secret`.
+
+![](https://i.imgur.com/ZnnClmj.png)
+
+7. After filling out the description and clicking `Add`, 
+The `[app_secret]` will be in the red box as shown.
+
+![](https://i.imgur.com/hQcbvu3.png)
+
+After completing the `oauth_settings.yml` file, open the terminal and run this script under the `msft-remote-medical-poc` file.
+```
+python3 main/manage.py runserver
+```
 
 
 ## Code structure
