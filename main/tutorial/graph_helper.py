@@ -234,12 +234,16 @@ def create_event(token, subject, start, end, link, attendees=None, body=None, ti
   # Set headers
   headers = {
     'Authorization': 'Bearer {0}'.format(token),
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   }
 
-  requests.post('{0}/me/events'.format(graph_url),
+  response = requests.post('{0}/me/events'.format(graph_url),
     headers=headers,
     data=json.dumps(new_event))
+
+  print("================================")
+  # print(response.content)
+  print("================================")
 
 
 def create_meeting(token, start, end, timezone='UTC'):
@@ -261,13 +265,14 @@ def create_meeting(token, start, end, timezone='UTC'):
   # Set headers
   headers = {
     'Authorization': 'Bearer {0}'.format(token),
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   }
 
+  print(new_event)
   response = requests.post('{0}/me/onlineMeetings'.format(graph_url),
     headers=headers,
     data=json.dumps(new_event))
-  
+
   ret = "no link recieved"
   print("================================")
   print(response.content)
