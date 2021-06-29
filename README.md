@@ -34,7 +34,7 @@ In the Azure portal, please follow these steps:
 
 ## Code structure
 
-Aside from the [tutorial](https://docs.microsoft.com/en-us/graphtutorials/python), we modified `main/tutorial/graph_helper` and `main/tutorial/views.py` to create our own function `create_meeting`.
+Aside from the [tutorial](https://docs.microsoft.com/en-us/graph/tutorials/python), we modified `main/tutorial/graph_helper` and `main/tutorial/views.py` to create our own function `create_meeting`.
 
 The resulted link in `create_meeting` gets send back to line 129 in `views.py`.
 The link is later on passed to `create_event` to become the content of the email.
@@ -49,6 +49,8 @@ The error message is as below.
 ```
 
 > NOTE: After solving this error, please modify line 262 in `graph_helper.py` into the responsed link. It is set to no link recieved now because the API isn't working.g
+
+[Issue in detailed.](https://github.com/yihanYozikua/msft-remote-medical-poc/issues)
 
 
 ## Related Links
